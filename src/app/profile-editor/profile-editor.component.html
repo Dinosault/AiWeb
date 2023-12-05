@@ -1,0 +1,53 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label>
+        First Name:
+        <input type="text" formControlName="firstName" required>
+    </label>
+    <br>
+    <label>
+        Last Name:
+        <input type="text" formControlName="lastName">
+    </label>
+    <div formGroupName="address">
+        <h3>Address</h3>
+        <label>
+            Street:
+            <input type="text" formControlName="street">
+        </label>
+        <br>
+        <label>
+            City:
+            <input type="text" formControlName="city">
+        </label>
+        <br>
+        <label>
+            State:
+            <input type="text" formControlName="state">
+        </label>
+        <br>
+        <label>
+            Zip Code:
+            <input type="text" formControlName="Zip">
+        </label>
+    </div>
+    <div formArrayName="aliases">
+        <h3>Aliases</h3><button (click)="addAlias()">Add Aliases</button>
+        <!-- 用 ngFor 指令對 aliases FormArray 提供的每個 FormControl 進行迭代 -->
+        <div *ngFor="let item of aliases.controls; let i =index">
+            <label>
+                Aliases:
+                <input type="text" formControlName="i">
+            </label>
+        </div>
+    </div>
+    <!-- 將驗證有沒有通過的狀態，繫結在按鈕的 disabled 屬性上 -->
+    <button type="submit" [disabled]="!profileForm.valid">submit</button>
+    <button type="button" (click)="updateProfile()">update</button>
+</form>
+<p>
+    Form Value: {{ profileForm.valid }} <br>
+    Form Status: {{ profileForm.status }}
+</p>
+<!-- 該控制元件組 model 來自它的所有成員 -->
+<!-- 定義這個 model 後，需更新 Template -->
+<!-- 將該 model 反映到 view 中 -->
