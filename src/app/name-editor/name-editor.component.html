@@ -1,8 +1,84 @@
-<label>
-    Name:
-    <input type="text" [formControl]="name">
-</label>
-<p>
-    <button (click)="updateName()">Update Name</button><br>
-    Value: {{ name.value }}
-</p>
+<!-- home.component.html -->
+
+<div class="home">
+    <form class="inputBox" (submit)="handleSubmit()">
+        <div id="form">
+            <div>
+                <label for="city">縣市</label>
+                <select name="city" id="city" [(ngModel)]="formData.city" (change)="handleInputChange($event)">
+                    <option value="基隆市">基隆市</option>
+                    <option value="臺北市">臺北市</option>
+                    <option value="新北市">新北市</option>
+                    <option value="桃園市">桃園市</option>
+                    <option value="新竹市">新竹市</option>
+                    <option value="新竹縣">新竹縣</option>
+                    <option value="苗栗縣">苗栗縣</option>
+                    <option value="臺中市">臺中市</option>
+                    <option value="彰化縣">彰化縣</option>
+                    <option value="南投縣">南投縣</option>
+                    <option value="雲林縣">雲林縣</option>
+                    <option value="嘉義市">嘉義市</option>
+                    <option value="嘉義縣">嘉義縣</option>
+                    <option value="臺南市">臺南市</option>
+                    <option value="高雄市">高雄市</option>
+                    <option value="屏東縣">屏東縣</option>
+                    <option value="宜蘭縣">宜蘭縣</option>
+                    <option value="花蓮縣">花蓮縣</option>
+                    <option value="臺東縣">臺東縣</option>
+                    <option value="澎湖縣">澎湖縣</option>
+                    <option value="金門縣">金門縣</option>
+                    <option value="連江縣">連江縣</option>
+                </select>
+                <label htmlFor="">鄉鎮市區</label>
+                <select name="conty" id="conty" [(ngModel)]="formData.conty">
+                    <option *ngFor="let option of townOptions[formData.city]" [value]="option">{{ option }}</option>
+                </select>
+            </div>
+            <div>
+                <label htmlFor="">建物型態</label>
+                <select name="buildType" id="buildType" value={formData.buildType} (Change)={handleInputChange}>
+                    <option value="公寓">公寓</option>
+                    <option value="透天厝">透天厝</option>
+                    <option value="店面">店面</option>
+                </select>
+                <label htmlFor="">主要用途</label>
+                <select name="buildUse" id="buildUse" value={formData.buildUse} (Change)={handleInputChange}>
+                    <option value="住宅">住宅</option>
+                    <option value="商業用">商業用</option>
+                    <option value="工業用">工業用</option>
+                </select>
+                <label htmlFor="">主要建材</label>
+                <select name="material" id="material" value={formData.material} (Change)={handleInputChange}>
+                    <option value="混泥土">混泥土</option>
+                    <option value="木材">木材</option>
+                    <option value="磚塊">磚塊</option>
+                </select>
+                <label htmlFor="">電梯</label>
+                <select name="elevator" id="elevator" value={formData.elevator} (Change)={handleInputChange}>
+                    <option value="有">有</option>
+                    <option value="無">無</option>
+                </select>
+                <label htmlFor="">管理</label>
+                <select name="manage" id="manage" value={formData.manage} (Change)={handleInputChange}>
+                    <option value="有">有</option>
+                    <option value="無">無</option>
+                </select>
+            </div>
+            <div>
+                <label htmlFor="">格局-房</label>
+                <input type="number" min="0" name="houseR" id="houseR" value={formData.houseR} (Change)={handleInputChange}/>
+                <label htmlFor="">格局-廳</label>
+                <input type="number" min="0" name="houseL" id="houseL" value={formData.houseL} (Change)={handleInputChange}/>
+                <label htmlFor="">格局-衛</label>
+                <input type="number" min="0" name="houseB" id="houseB" value={formData.houseB} (Change)={handleInputChange}/>
+                <label htmlFor="">建物面積(坪)</label>
+                <input type="number" min="0" name="houseS" id="houseS" value={formData.houseS} (Change)={handleInputChange}/>
+                <label htmlFor="">車位面積(坪)</label>
+                <input type="number" min="0" name="houseC" id="houseC" value={formData.houseC} (Change)={handleInputChange}/>
+            </div> 
+        </div>
+        <div id="formbottom">
+            <button id="submitbutton" (Click)={handleSubmit}>提交</button>
+        </div>
+    </form>
+</div>

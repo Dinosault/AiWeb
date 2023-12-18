@@ -1,0 +1,77 @@
+/* home.css */
+
+#form {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+/* 整個表單的外框 */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+/* 表單內容的框架 */
+.inputBox {
+    background-color: #d9d9d9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* 標籤、下拉選單和輸入欄位的樣式 */
+.inputBox label,
+.inputBox select,
+.inputBox input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* 下拉選單和輸入欄位的樣式 */
+.inputBox select,
+.inputBox input {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* 提交按鈕的樣式 */
+.inputBox button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.inputBox button:hover {
+    background-color: #2980b9;
+}
+
+/* 針對縣市下拉選單的樣式 */
+.inputBox #city {
+  margin-bottom: 15px; /* 增加縣市下拉選單的底部間距 */
+}
+
+#submitbutton {
+    width: 100px;
+    border: none;
+    border-radius: 4px;
+}
+
+#formbottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

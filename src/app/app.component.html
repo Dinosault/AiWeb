@@ -6,7 +6,12 @@
   <title>AiWeb</title>
 </head>
 <body>
-  <app-name-editor></app-name-editor>
-  <app-profile-editor></app-profile-editor>
+  <mat-toolbar>
+    <span>房價預測平台</span>
+    <mat-icon class="house" aria-hidden="false" aria-label="Example user verified icon">home</mat-icon>
+    <span class="example-spacer"></span>
+    <button mat-mini-fab routerLink="/login"><mat-icon>person</mat-icon></button>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
 </body>
 </html>
