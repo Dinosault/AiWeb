@@ -1,0 +1,51 @@
+.signhome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin-top: 3em;
+    margin-bottom: 100px;
+}
+.sign-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.example-spacer {
+    width: 1em;
+}
+.username{
+    display: flex;
+    margin: 1em;
+}
+.password{
+    display: flex;
+    margin: 1em;
+}
+.email{
+    display: flex;
+    margin: 1em;
+}
+#username{
+    margin-left: 1em;
+}
+#password{
+    margin-left: 1em;
+}
+#email{
+    margin-left: 1em;
+}

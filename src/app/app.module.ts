@@ -16,14 +16,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
-import { LoginComponent } from './login/login.component'
+import { MatSelectModule } from '@angular/material/select';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NameEditorComponent,
     LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,9 @@ import { LoginComponent } from './login/login.component'
     MatButtonModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
