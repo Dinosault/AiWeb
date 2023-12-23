@@ -5,11 +5,11 @@
         <form>
             <div class="username">
                 <label for="username">Username :</label>
-                <input type="text" id="username" [(ngModel)]="username" name="username" required>
+                <input type="text" id="username" [(ngModel)]="user.userAccount" name="username" required>
             </div>
             <div class="password">
                 <label for="password">Password :</label>
-                <input type="password" id="password" [(ngModel)]="password" name="password" required>
+                <input type="password" id="password" [(ngModel)]="user.userPassword" name="password" required>
             </div>
             <div class="button">
                 <button routerLink="/name-editor">go back</button>

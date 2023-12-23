@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { DataApiService } from '../service/todo-api.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,18 +7,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 
-export class SignupComponent {
+export class SignupComponent implements OnInit{
 
+  hide = true;
   error: string = '';
-
   user = {
-    username: '',
-    email: '',
-    password: ''
+    userAccount: '',
+    userPassword: ''
   };
 
-  onSubmit() {
+  constructor(private dataApiService: DataApiService) {}
+
+  onSubmit(): void {
     // 處理表單提交邏輯，如發送到伺服器
-    console.log('提交的數據: ', this.user);
+    this.dataApiService.signUpData(this.user).subscribe(
+      data => console.log('傳送成功:', data),
+      error => console.error('請求出現問題:', error)
+    );
+    // console.log('提交的數據: ', this.user);
   }
+
+  ngOnInit(): void {}
+
 }

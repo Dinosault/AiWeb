@@ -8,18 +8,16 @@ import { Observable } from 'rxjs';
 })
 export class DataApiService {
 
-  private apiUrl = 'http://10.25.1.248:5154/UserAccount/AddAccount'; 
+  baseUrl = 'http://10.25.1.139:5236'
 
   constructor(private http: HttpClient) {}
 
-  getCityOptions(): Observable<any> {
-    const url = `${this.apiUrl}`;
-    return this.http.get(url);
+  logInData(formData: any): Observable<any> {
+    const url = this.baseUrl + '/User/Login'; // 登入
+    return this.http.post<any>(url, formData);
   }
-  postData(formData: any): Observable<any> {
-    const url = `${this.apiUrl}`;
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-    return this.http.post(url, formData, { headers });
+  signUpData(user: any): Observable<any> {
+    const apiurl = this.baseUrl + '/User/Register'; // 註冊
+    return this.http.post<any>(apiurl, user);
   }
 }

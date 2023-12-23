@@ -1,9 +1,12 @@
+:host ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: #aaa;
+}
 .signhome {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60vh;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-bottom: 100px;
 }
 .sign-container {
@@ -13,7 +16,8 @@
     max-width: 300px;
     margin: auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    background: #aaa;
+    border: 1px solid #777;
     border-radius: 5px;
 }
 .error {
@@ -28,24 +32,10 @@
 .example-spacer {
     width: 1em;
 }
-.username{
+#username, #password{
+    color: whitesmoke;
+}
+#signupform {
     display: flex;
-    margin: 1em;
-}
-.password{
-    display: flex;
-    margin: 1em;
-}
-.email{
-    display: flex;
-    margin: 1em;
-}
-#username{
-    margin-left: 1em;
-}
-#password{
-    margin-left: 1em;
-}
-#email{
-    margin-left: 1em;
+    flex-direction: column;
 }

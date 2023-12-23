@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../service/todo-api.service';
-
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-name-editor',
   templateUrl: './name-editor.component.html',
@@ -8,18 +8,14 @@ import { DataApiService } from '../service/todo-api.service';
 })
 export class NameEditorComponent implements OnInit {
 
-  formData1 = {
-    "userEmail": "003@gmail.com",
-    "userAccount": "003Account",
-    "userPassword": "003Password",
-    "userIdentity": "bob",
-  }
+  name = new FormControl('');
+
   formData = {
-    city: "基隆市",
-    conty: '123',
-    buildType: '123',
-    buildUse: '123',
-    material: '123',
+    city: '',
+    conty: '',
+    buildType: '',
+    buildUse: '',
+    material: '',
     elevator: true,
     manage: true,
     houseR: 0,
@@ -65,7 +61,7 @@ export class NameEditorComponent implements OnInit {
   }
 
   handleSubmit(): void {
-    this.dataApiService.postData(this.formData1).subscribe(
+    this.dataApiService.logInData(this.formData).subscribe(
       data => console.log('傳送成功:', data),
       error => console.error('請求出現問題:', error)
     );
